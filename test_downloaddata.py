@@ -9,6 +9,8 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 
+username = "my_username"
+password = "my_password"
 
 class TestDownloaddata():
   def setup_method(self, method):
@@ -32,8 +34,8 @@ class TestDownloaddata():
     self.driver.find_element(By.LINK_TEXT, "Login").click()
     self.vars["win6248"] = self.wait_for_window(2000)
     self.driver.switch_to.window(self.vars["win6248"])
-    self.driver.find_element(By.ID, "j_id0:SiteTemplate:j_id297:loginComponent:loginForm:password").send_keys("***REMOVED***")
-    self.driver.find_element(By.ID, "j_id0:SiteTemplate:j_id297:loginComponent:loginForm:username").send_keys("***REMOVED***")
+    self.driver.find_element(By.ID, "j_id0:SiteTemplate:j_id297:loginComponent:loginForm:password").send_keys(password)
+    self.driver.find_element(By.ID, "j_id0:SiteTemplate:j_id297:loginComponent:loginForm:username").send_keys(username)
     self.driver.find_element(By.ID, "j_id0:SiteTemplate:j_id297:loginComponent:loginForm:username").click()
     self.driver.find_element(By.ID, "j_id0:SiteTemplate:j_id297:loginComponent:loginForm:password").click()
     self.driver.find_element(By.ID, "j_id0:SiteTemplate:j_id297:loginComponent:loginForm:loginButtonAccountPage").click()
